@@ -1,5 +1,5 @@
 {
-    "name": "applets",
+    "name": "applets/applets",
     "type": "project",
     "description": "小程序 api 接口",
     "keywords": [
@@ -11,7 +11,8 @@
         "php": "^7.2",
         "fideloper/proxy": "^4.0",
         "laravel/framework": "^6.18.35",
-        "laravel/tinker": "^2.0"
+        "laravel/tinker": "^2.0",
+        "overtrue/laravel-wechat": "^5.1"
     },
     "require-dev": {
         "facade/ignition": "^1.4",
@@ -57,5 +58,11 @@
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
         ]
+    },
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://mirrors.aliyun.com/composer/"
+        }
     }
 }
