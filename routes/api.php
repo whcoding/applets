@@ -20,3 +20,7 @@ use Illuminate\Http\Request;
 Route::prefix('wx')->group(function () {
     Route::any('/get-auth-session', 'LoginController@index');
 });
+
+Route::any('/get-banner', 'BannerController@index');
+
+Route::any('/upload', 'BannerController@upload');
