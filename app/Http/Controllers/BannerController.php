@@ -27,10 +27,10 @@ class BannerController extends Controller
 
     public function upload(Request $request)
     {
-        $file = $request->file('file')->store(
-            '', 'banner'
-        );
-        return $file;
+
+        $file = $request->file('file')->store('public/banner');
+        $path = Storage::url($file);
+        return $path;
     }
 
 }

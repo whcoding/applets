@@ -64,13 +64,6 @@ return [
             'url' => env('AWS_URL'),
             'endpoint' => env('AWS_ENDPOINT'),
         ],
-
-        'banner' => [
-            'driver' => 'local',
-            'root' => storage_path('app/banner'),
-            'url' => env('APP_URL').'/banner',
-            'visibility' => 'public',
-        ],
     ],
 
 ];

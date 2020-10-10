@@ -21,6 +21,8 @@ class CreateProductsTable extends Migration
             $table->integer('sort')->default(0)->comment('排序');
             $table->timestamps();
         });
+
+        DB::statement(" ALTER TABLE products comment '商品表' ");
     }
 
     /**

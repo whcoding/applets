@@ -21,7 +21,7 @@ class CreateProductTypesTable extends Migration
             $table->timestamps();
         });
 
-        DB::statement(" ALTER TABLE banners comment '商品分类表' ");
+        DB::statement(" ALTER TABLE product_types comment '商品分类表' ");
     }
 
     /**
