@@ -24,3 +24,4 @@ Route::prefix('wx')->group(function () {
 Route::any('/get-banner', 'BannerController@index');
 
 Route::any('/upload', 'BannerController@upload');
+Route::any('/get-userinfo', 'LoginController@userInfo');
