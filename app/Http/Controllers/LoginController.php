@@ -6,6 +6,7 @@ use App\Dao\UserDao;
 use App\Utils\JsonBuilder;
 use Illuminate\Http\Request;
 use EasyWeChat\Factory;
+use Psy\Util\Json;
 
 class LoginController extends Controller
 {
@@ -28,7 +29,7 @@ class LoginController extends Controller
     {
         $openId = $request->input('open_id');
         $dao = new UserDao;
-        $result = $dao->getUserInfoByOpenid($openId);
+        $result = $dao->getUserInfoByOpenId($openId);
         if (empty($result)) {
             return JsonBuilder::Error('未找到用户信息');
         }
@@ -41,10 +42,19 @@ class LoginController extends Controller
     /**
      * 修改用户信息
      * @param Request $request
+     * @return string
      */
     public function myInfo(Request $request)
     {
+        $openId = $request->input('open_id');
+        $data   = $request->input('data');
 
+        $dao = new UserDao;
+        $result = $dao->updateUserInfoByOpenId($openId, $data);
+        if ($result) {
+            return JsonBuilder::Success('修改成功');
+        }
+        return JsonBuilder::Error('修改失败');
     }
 
 }
